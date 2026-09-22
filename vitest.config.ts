@@ -1,4 +1,5 @@
 import { defineConfig } from "vitest/config";
+import { fileURLToPath } from "node:url";
 
 export default defineConfig({
   test: {
@@ -7,6 +8,6 @@ export default defineConfig({
     testTimeout: 30000,
   },
   resolve: {
-    alias: { "@": "/home/user/Api-sentinal-phone/src" },
+    alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) },
   },
 });
